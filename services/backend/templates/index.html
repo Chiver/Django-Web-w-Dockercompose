@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/assets/trace-icon.png">
+    <!-- <div style="background-image: url('../static/assets/dbbgi.jpeg');"> -->
+    <title>迹 App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/cover.css" rel="stylesheet">
+</head>
+
+
+<body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">Trace.Social</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="#">主页</a>
+            <a class="nav-link" href="{{ url_for('about') }}">关于我们</a>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading"><br>即将上线</h1>
+        <p class="lead">迹·身份网络小程序正在开发中, 敬请期待</p>
+        <br> 
+        <h5>如您想在产品上线时成为我们的内测用户，可以留下您的微信号
+            <br> 
+            届时会有工作人员与您联系！
+        </h5>
+        <br>
+        <form method="post" name="Form" action="{{ url_for('submit') }}" onsubmit="return validateForm()">
+            <input type="text" name="name" placeholder="名称">
+            <br>
+            <br>
+            <input type="text" name="wxid" placeholder="微信号">
+            <br>
+            <br>
+            <input type="submit" class="btn btn-lg btn-secondary" name="提交">
+        </form>
+      </main>
+
+        
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Copyright Trace.Social @ 2021 | Powered by Flask & Docker-compose.</p>
+        </div>
+      </footer>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <!-- <script src="../../../../assets/js/vendor/popper.min.js"></script> -->
+    <!-- <script src="../../../../dist/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript">
+      function validateForm() {
+        var a = document.forms["Form"]["name"].value;
+        var b = document.forms["Form"]["wxid"].value;
+        if (a == null || a == "", b == null || b == "") {
+          alert("请填写您的昵称与微信号码！");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
